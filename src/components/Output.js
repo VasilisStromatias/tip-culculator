@@ -1,10 +1,11 @@
 import React from "react";
 
-function Output({ bill, value }) {
+function Output({ bill, tip }) {
+  let total = bill + tip;
+
   return (
     <div>
-      You pay $X ( ${bill} + $X tips)
-      {value}
+      You pay ${total} ( ${bill} + ${tip} tips)
     </div>
   );
 }

@@ -1,24 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-function BillPayment({ setBill }) {
-  const [input, setInput] = useState(0);
-
+function BillPayment({ bill, setBill }) {
   const handleInput = (e) => {
-    setInput(Number(e.target.value.replace(/\D/g, "")));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setBill(input);
+    setBill(Number(e.target.value.replace(/\D/g, "")));
   };
 
   return (
     <div className="bill-payment">
-      <form onSubmit={handleSubmit}>
+      <form>
         <label>How much was the bill?</label>
         <input
           type="text"
-          value={input}
+          value={bill}
           placeholder="Set the bill value in dollars"
           onChange={handleInput}
         />
